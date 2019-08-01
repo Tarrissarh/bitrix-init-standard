@@ -1,0 +1,9 @@
+.idea/
+/bitrix/
+/upload/
+
+local/php_interface/env.php
+
+urlrewrite.php
+.htaccess
+.access.php
