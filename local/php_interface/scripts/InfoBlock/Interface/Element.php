@@ -6,32 +6,36 @@ interface Element
 {
 	/**
 	 * Создать элемент
-	 * @param array $params Свойста элемента
+	 * @param array $fields Базовые свойства элемента
+     * @param array $properties Дополнительные свойства элемента
 	 * @return int|null
 	 */
-	public static function create(array $params = []):?int;
+	public static function create(array $fields = [], array $properties = []):?int;
 
 	/**
 	 * Обновить элемент
 	 * @param int $id ID элемента
-	 * @param array $params Свойста элемента
-	 * @return int|null
+	 * @param array $fields Базовые свойства элемента
+     * @param array $properties Дополнительные свойства элемента
+	 * @return bool
 	 */
-	public static function update(int $id, array $params = []):?int;
+	public static function update(int $id, array $fields = [], array $properties = []):bool;
 
 	/**
 	 * Удалить элемент
 	 * @param int $id ID элемента
-	 * @return int|null
+	 * @return bool
 	 */
-	public static function delete(int $id):?int;
+	public static function delete(int $id):bool;
 
 	/**
 	 * Получить список элементов по условиям
 	 * @param array $filter Параметры поиска
+     * @param array $sort Параметры сортировки
+     * @param array $select Параметры выборки
 	 * @return array
 	 */
-	public static function getList(array $filter = []):array;
+	public static function getList(array $filter = [], array $sort = [], array $select = []):array;
 
 	/**
 	 * Получить элемент по его ID

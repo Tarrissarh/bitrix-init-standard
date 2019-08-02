@@ -8,8 +8,11 @@ use \Bitrix\Main\{
 	Application,
 	Web\Cookie,
 	SystemException,
-	Loader
+	Loader,
+    Localization\Loc
 };
+
+Loc::loadMessages(__FILE__);
 
 // Подключаем модуль инфоблока
 Loader::includeModule('iblock');
@@ -42,6 +45,15 @@ class Tools
 	{
 		return APP_MODE === 'test';
 	}
+
+    /**
+     * Dev env
+     * @return bool
+     */
+    public static function isDev():bool
+    {
+        return self::isLocal() || self::isTest();
+    }
 
 	/**
 	 * Проверить на AJAX страницу
@@ -250,7 +262,7 @@ class Tools
 	 * @param array $words Массив слов для склонения
 	 * @return string
 	 */
-	public static function findTextFormat(int $countData = 0, array $words = ['продукт', 'продукта', 'продуктов']):string
+	public static function findTextFormat(int $countData = 0, array $words = [Loc::getMessage('PRODUCT_1'), Loc::getMessage('PRODUCT_2'), Loc::getMessage('PRODUCTS')]):string
 	{
 		$num = $countData % 100;
 
@@ -281,13 +293,13 @@ class Tools
 	public static function getDateIn(string $dayNumber = ''):string
 	{
 		$days_arr_format = [
-			1 => 'в понедельник',
-			2 => 'во вторник',
-			3 => 'в среду',
-			4 => 'в четверг',
-			5 => 'в пятницу',
-			6 => 'в субботу',
-			7 => 'в воскресенье'
+			1 => Loc::getMessage('IN_MONDAY'),
+			2 => Loc::getMessage('IN_TUESDAY'),
+			3 => Loc::getMessage('IN_WEDNESDAY'),
+			4 => Loc::getMessage('IN_THURSDAY'),
+			5 => Loc::getMessage('IN_FRIDAY'),
+			6 => Loc::getMessage('IN_SATURDAY'),
+			7 => Loc::getMessage('IN_SUNDAY')
 		];
 
 		return $days_arr_format[$dayNumber];

@@ -6,25 +6,25 @@ interface Section
 {
 	/**
 	 * Создать раздел
-	 * @param array $params Свойста раздела
+	 * @param array $fields Свойста раздела
 	 * @return int|null
 	 */
-	public static function create(array $params = []):?int;
+	public static function create(array $fields = []):?int;
 
 	/**
 	 * Обновить раздел
 	 * @param int $id ID раздела
-	 * @param array $params Свойста раздела
-	 * @return int|null
+	 * @param array $fields Свойста раздела
+	 * @return bool
 	 */
-	public static function update(int $id, array $params = []):?int;
+	public static function update(int $id, array $fields = []):bool;
 
 	/**
 	 * Удалить раздел
 	 * @param int $id ID раздела
-	 * @return int|null
+	 * @return bool
 	 */
-	public static function delete(int $id):?int;
+	public static function delete(int $id):bool;
 
 	/**
 	 * Получить список разделов по условиям
