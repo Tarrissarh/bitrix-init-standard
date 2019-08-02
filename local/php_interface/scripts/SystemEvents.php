@@ -4,11 +4,12 @@ namespace Standard;
 
 use \CUser;
 use \CEvent;
-use \CIBlockElement;
-use \Bitrix\Main\Loader;
-use \Bitrix\Main\Application;
-use \Bitrix\Main\Web\Cookie;
-use \Bitrix\Main\Localization\Loc;
+use \Bitrix\Main\{
+	Loader,
+	Application,
+	Web\Cookie,
+	Localization\Loc
+};
 
 Loc::loadMessages(__FILE__);
 

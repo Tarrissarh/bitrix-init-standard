@@ -16,7 +16,7 @@ class CUserExtended extends CUser
 		$fullName = $arUser['NAME'];
 
 		if (!empty($arUser['LAST_NAME'])) {
-			$fullName .= ' ' . $arUser['NAME'];
+			$fullName = $arUser['LAST_NAME'] . ' ' . $arUser['NAME'];
 		}
 
 		if (!empty($arUser['SECOND_NAME'])) {
