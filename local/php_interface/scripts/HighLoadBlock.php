@@ -64,6 +64,12 @@ class HighLoadBlock
 	 */
 	public function get(array $params = [], bool $isGetAll = true)
 	{
+		if (empty($params['sort'])) {
+			$params['sort'] = [
+				'ID' => 'ASC'
+			];
+		}
+
 		$data = $this->entity->getDataClass()::getList($params);
 
 		if ($isGetAll) {

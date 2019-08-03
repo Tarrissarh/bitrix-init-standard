@@ -262,8 +262,16 @@ class Tools
 	 * @param array $words Массив слов для склонения
 	 * @return string
 	 */
-	public static function findTextFormat(int $countData = 0, array $words = [Loc::getMessage('PRODUCT_1'), Loc::getMessage('PRODUCT_2'), Loc::getMessage('PRODUCTS')]):string
+	public static function findTextFormat(int $countData = 0, array $words = []):string
 	{
+		if (empty($words)) {
+			$words = [
+				Loc::getMessage('PRODUCT_1'),
+				Loc::getMessage('PRODUCT_2'),
+				Loc::getMessage('PRODUCTS')
+			];
+		}
+
 		$num = $countData % 100;
 
 		if ($num > 19) {

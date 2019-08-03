@@ -41,6 +41,9 @@ if (LANGUAGE_ID === 'ru') {
 	\Standard\InfoBlock\Section::class      =>  '/local/php_interface/scripts/InfoBlock/Interface/Section.php',
 	\Standard\InfoBlock\Element::class      =>  '/local/php_interface/scripts/InfoBlock/Interface/Element.php',
 	\Standard\InfoBlock\InfoBlock::class    =>  '/local/php_interface/scripts/InfoBlock/Interface/InfoBlock.php',
+
+	\Standard\HighLoadBlock\Settings::class =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Settings.php',
+	\Standard\HighLoadBlock\Metrics::class  =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Metrics.php',
 ]);
 
 // Подключаем обработчики событий

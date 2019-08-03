@@ -2,8 +2,8 @@
 
 $sSectionName = 'Главная';
 $arDirProperties = [
-	'title'         =>  'Title',
-	'description'   =>  'Description',
+	'title'         =>  'Заголовок',
+	'description'   =>  'Описание',
 	'keywords'      =>  'Keywords',
-	'robots'        =>  'index, follow'
+	'robots'        =>  'index, nofollow'
 ];
