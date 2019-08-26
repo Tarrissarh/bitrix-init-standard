@@ -228,9 +228,10 @@ class Tools
 	public static function formatPhoneNumber(string $phoneNumber)
 	{
 		$phoneNumber = preg_replace('/[\D]/','',$phoneNumber);
+		$phoneLength = strlen($phoneNumber);
 
-		if (strlen($phoneNumber) > 10) {
-			$countryCode    =   substr($phoneNumber, 0, strlen($phoneNumber) - 10);
+		if ($phoneLength > 10) {
+			$countryCode    =   substr($phoneNumber, 0, $phoneLength - 10);
 			$areaCode       =   substr($phoneNumber, -10, 3);
 			$nextThree      =   substr($phoneNumber, -7, 3);
 			$lastFour       =   substr($phoneNumber, -4, 4);
@@ -240,13 +241,13 @@ class Tools
 			}
 
 			$phoneNumber    =   $countryCode . ' (' . $areaCode . ') ' . $nextThree . '-' . $lastFour;
-		} elseif (strlen($phoneNumber) === 10) {
+		} elseif ($phoneLength === 10) {
 			$areaCode       =   substr($phoneNumber, 0, 3);
 			$nextThree      =   substr($phoneNumber, 3, 3);
 			$lastFour       =   substr($phoneNumber, 6, 4);
 
 			$phoneNumber    =   '+7 (' . $areaCode . ') ' . $nextThree . '-' . $lastFour;
-		} elseif (strlen($phoneNumber) === 7) {
+		} elseif ($phoneLength === 7) {
 			$nextThree      =   substr($phoneNumber, 0, 3);
 			$lastFour       =   substr($phoneNumber, 3, 4);
 
@@ -295,10 +296,10 @@ class Tools
 
 	/**
 	 * Формат дня недели на вопрос: "Когда?"
-	 * @param string $dayNumber
+	 * @param int $dayNumber День недели
 	 * @return string
 	 */
-	public static function getDateIn(string $dayNumber = ''):string
+	public static function getDateIn(int $dayNumber = 1):string
 	{
 		$days_arr_format = [
 			1 => Loc::getMessage('IN_MONDAY'),

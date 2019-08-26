@@ -1,30 +1,22 @@
 <?php
 
-$envFile = $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/env.php';
+$phpInterfacePath   =   $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/';
+$envFile            =   $phpInterfacePath . 'env.php';
+$definesFile        =   $phpInterfacePath . 'defines.php';
 
 // Подключаем файл окружения
 if (file_exists($envFile)) {
 	require_once $envFile;
 }
 
-// Определяем окружение, если оно не указан
-if (!defined('APP_MODE')) {
-	define('APP_MODE', 'local');
-}
-
-// Определяем URL путь к стилям, скриптам и т.д., если он не указан
-if (!defined('THEME_URL_ASSETS')) {
-	define('THEME_URL_ASSETS', '/local/templates/standard/assets');
-}
-
-// Определяем путь к файлу лога, если он не указан
-if (!defined('LOG_FILENAME')) {
-	define('LOG_FILENAME', $_SERVER['DOCUMENT_ROOT'] . '/php_interface/logs/bitrix_log_standard.log');
+// Подключаем файл констант
+if (file_exists($definesFile)) {
+	require_once $definesFile;
 }
 
 /*
  * Устанавливаем возможность локализации даты
- * Для вывода даты используем strftime(string $format, [, int $timestamp = time()]);
+ * Для вывода даты нужно использовать strftime(string $format, [, int $timestamp = time()]);
  * @link https://www.php.net/manual/ru/function.strftime.php
  */
 if (LANGUAGE_ID === 'ru') {

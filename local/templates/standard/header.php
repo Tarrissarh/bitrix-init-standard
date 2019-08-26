@@ -43,7 +43,6 @@ $metaDescription = (!empty($arParams['META_DESCRIPTION']) ? $arParams['META_DESC
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
 
 	<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico'>
-	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400&subset=cyrillic' rel='stylesheet' type='text/css'>
 
 	<meta charset='<?=LANG_CHARSET;?>'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -59,11 +58,11 @@ $metaDescription = (!empty($arParams['META_DESCRIPTION']) ? $arParams['META_DESC
 		<script type="text/javascript"></script>
 	<?php endif; ?>
 </head>
-<body>
+<body class="<?=SITE_ID;?> <?=LANGUAGE_ID;?>">
 	<?php if ($USER->IsAdmin()): ?>
 		<div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 	<?php endif; ?>
 
 	<!--[if lte IE 9]>
-		<div class="alert alert-warning" role="alert">Вы используете устаревший браузер. <a href="https://browsehappy.com/">Обновитесь</a></div>
+		<div class="alert alert-warning" role="alert">Вы используете устаревший браузер. <a href="https://browsehappy.com/" target="_blank">Обновитесь</a></div>
 	<![endif]-->
