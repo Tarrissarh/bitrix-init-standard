@@ -4,14 +4,12 @@
 ```
 <?php
 
-$constants = [
-    'APP_MODE'          =>  'local',//test, prod
-    'THEME_URL_ASSETS'  =>  '/local/templates/standard/assets',
-    'LOG_FILENAME'      =>  $_SERVER['DOCUMENT_ROOT'] . '/php_interface/logs/bitrix_log_standard.log'
-];
+<?php
 
-foreach ($constants as $key => $value) {
-    define($key, $value);
-}
+define('APP_MODE', 'local');//test, prod
+define('THEME_URL_ASSETS', '/local/templates/standard/assets');
+define('LOG_FILENAME', $_SERVER['DOCUMENT_ROOT'] . '/php_interface/logs/main.log');
+define('HTTPS_REDIRECT_PROD', true);// Enable https redirect on production
+define('HTTPS_REDIRECT_TEST', true);// Enable https redirect on test/qa
 
 ```

@@ -1,6 +1,6 @@
 <?php
 
-namespace Standard\InfoBlock;
+namespace Standard\InfoBlock\Interfaces;
 
 interface Element
 {

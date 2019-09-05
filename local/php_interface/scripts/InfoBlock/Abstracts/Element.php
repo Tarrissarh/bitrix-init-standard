@@ -1,8 +1,8 @@
 <?php
 
-namespace Standard\InfoBlock;
+namespace Standard\InfoBlock\Abstracts;
 
-use \Standard\InfoBlock\Element;
+use \Standard\InfoBlock\Interfaces\Element AS ElementInterface;
 use \Standard\Tools;
 use \CIBlockElement;
 use \CIBlock;
@@ -10,7 +10,7 @@ use \Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-abstract class AbstractElement implements Element
+abstract class Element implements ElementInterface
 {
     protected static $select            =   ['*'];
     protected static $ibBlockCode       =   '';

@@ -1,10 +1,10 @@
 <?php
 
-namespace Standard\InfoBlock;
+namespace Standard\InfoBlock\Abstracts;
 
-use \Standard\InfoBlock\InfoBlock;
-use \Standard\InfoBlock\AbstractElement;
-use \Standard\InfoBlock\AbstractSection;
+use \Standard\InfoBlock\Interfaces\InfoBlock AS InfoBlockInterface;
+use \Standard\InfoBlock\Abstracts\Element;
+use \Standard\InfoBlock\Abstracts\Section;
 use \Standard\Tools;
 use \CIBlockElement;
 use \CIBlockSection;
@@ -13,7 +13,7 @@ use \Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-abstract class AbstractInfoBlock implements InfoBlock
+abstract class InfoBlock implements InfoBlockInterface
 {
     protected static $selectElement             =   ['*'];
     protected static $selectSection             =   ['*'];

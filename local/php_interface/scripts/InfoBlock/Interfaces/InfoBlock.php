@@ -1,9 +1,9 @@
 <?php
 
-namespace Standard\InfoBlock;
+namespace Standard\InfoBlock\Interfaces;
 
-use \Standard\InfoBlock\Section;
-use \Standard\InfoBlock\Element;
+use \Standard\InfoBlock\Interfaces\Section;
+use \Standard\InfoBlock\Interfaces\Element;
 
 interface InfoBlock
 {

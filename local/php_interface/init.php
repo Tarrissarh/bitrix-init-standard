@@ -30,13 +30,19 @@ if (LANGUAGE_ID === 'ru') {
 	\Standard\HighLoadBlock::class  =>  '/local/php_interface/scripts/HighLoadBlock.php',
 	\Standard\CUserExtended::class  =>  '/local/php_interface/scripts/CUserExtended.php',
 
-	\Standard\InfoBlock\Section::class      =>  '/local/php_interface/scripts/InfoBlock/Interface/Section.php',
-	\Standard\InfoBlock\Element::class      =>  '/local/php_interface/scripts/InfoBlock/Interface/Element.php',
-	\Standard\InfoBlock\InfoBlock::class    =>  '/local/php_interface/scripts/InfoBlock/Interface/InfoBlock.php',
+	\Standard\InfoBlock\Interfaces\Section::class   =>  '/local/php_interface/scripts/InfoBlock/Interfaces/Section.php',
+	\Standard\InfoBlock\Interfaces\Element::class   =>  '/local/php_interface/scripts/InfoBlock/Interfaces/Element.php',
+	\Standard\InfoBlock\Interfaces\InfoBlock::class =>  '/local/php_interface/scripts/InfoBlock/Interfaces/InfoBlock.php',
 
-	\Standard\HighLoadBlock\Settings::class =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Settings.php',
-	\Standard\HighLoadBlock\Metrics::class  =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Metrics.php',
+    \Standard\InfoBlock\Abstracts\Section::class    =>  '/local/php_interface/scripts/InfoBlock/Abstracts/Section.php',
+    \Standard\InfoBlock\Abstracts\Element::class    =>  '/local/php_interface/scripts/InfoBlock/Abstracts/Element.php',
+    \Standard\InfoBlock\Abstracts\InfoBlock::class  =>  '/local/php_interface/scripts/InfoBlock/Abstracts/InfoBlock.php',
+
+	\Standard\HighLoadBlock\Interfaces\SimpleHighLoadBlock::class   =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Interfaces/SimpleHighLoadBlock.php',
+	\Standard\HighLoadBlock\Abstracts\SimpleHighLoadBlock::class    =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Abstracts/SimpleHighLoadBlock.php',
+	\Standard\HighLoadBlock\Settings::class                         =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Settings.php',
+	\Standard\HighLoadBlock\Metrics::class                          =>  '/local/php_interface/scripts/InfoBlock/HighLoadBlock/Metrics.php',
 ]);
 
 // Подключаем обработчики событий
-AddEventHandler('main', 'OnBeforeProlog', [\Standard\SystemEvents::class, 'onBeforeProlog'], 10);
+AddEventHandler('main', 'OnBeforeProlog', [\Standard\SystemEvents::class, 'onBeforeProlog'], 1);

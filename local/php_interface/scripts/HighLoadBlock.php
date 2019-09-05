@@ -27,14 +27,12 @@ class HighLoadBlock
 	 */
 	private $id;
 
-	/**
-	 * HighLoadBlock constructor.
-	 * @param string $name
-	 * @throws ArgumentException
-	 * @throws ObjectPropertyException
-	 * @throws SystemException
-	 */
-	public function __construct(string $name)
+    /**
+     * HighLoadBlock constructor.
+     * @param string $name
+     * @throws SystemException
+     */
+    public function __construct(string $name)
 	{
 		$blockEl = HL\HighloadBlockTable::getList([
 			'filter' => ['NAME' => $name]

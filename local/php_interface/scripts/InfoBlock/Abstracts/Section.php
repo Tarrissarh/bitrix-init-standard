@@ -1,8 +1,8 @@
 <?php
 
-namespace Standard\InfoBlock;
+namespace Standard\InfoBlock\Abstracts;
 
-use \Standard\InfoBlock\Section;
+use \Standard\InfoBlock\Interfaces\Section AS SectionInterface;
 use \Standard\Tools;
 use \CIBlockSection;
 use \CIBlock;
@@ -10,7 +10,7 @@ use \Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-abstract class AbstractSection implements Section
+abstract class Section implements SectionInterface
 {
     protected static $select            =   ['*'];
     protected static $ibBlockCode       =   '';

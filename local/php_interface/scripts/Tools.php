@@ -98,7 +98,7 @@ class Tools
 		}
 
 		echo '</pre>';
-		exit();
+		exit;
 	}
 
 	/**
@@ -196,6 +196,7 @@ class Tools
 			for ($i = 0; $i <= count($ips) - 1; $i++) {
 				if (!preg_match("/^(10|172\\.16|192\\.168)\\./", $ips[$i])) {
 					$ip = $ips[$i];
+
 					break;
 				}
 			}
@@ -211,7 +212,7 @@ class Tools
 	 * @param int $quantity Размер массива
 	 * @return array
 	 */
-	public static function getRandomArray(int $min, int $max, int $quantity):array
+	public static function getRandomArray(int $min = 0, int $max = 10, int $quantity = 5):array
 	{
 		$numbers = range($min, $max);
 
@@ -315,7 +316,7 @@ class Tools
 	}
 
 	/**
-	 * htmlspecialcharsbx для вложенных массивов
+	 * htmlspecialcharsbx с учетом массива
 	 * @param array $request $_REQUEST массив
 	 * @return array
 	 */
